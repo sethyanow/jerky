@@ -26,7 +26,9 @@
     "glob": "^3.2.9",
     "ember-cli-ic-ajax": "0.1.1",
     "ember-cli-ember-data": "0.1.0",
-    "broccoli-asset-rev": "0.0.11"
+    "broccoli-asset-rev": "0.0.11",
+    "broccoli-ember-script": "^0.1.1",
+    "broccoli-emblem-compiler": "^0.3.16"
   },
   "dependencies": {
     "moment": "^2.7.0"
