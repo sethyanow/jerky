@@ -1,0 +1,34 @@
+<section id='jerkysapp'>
+  <header id='header'>
+    <h1>Jerky Orders</h1>
+    {{input type='text' id='new-order' placeholder='What needs to be done?'
+            value=newTitle action='createOrder'}}
+  </header>
+
+  <section id='main'>
+    {{outlet}}
+
+    
+  </section>
+
+  <footer id='footer'>
+    <span id='order-count'>
+      <strong>{{active.length}}</strong> {{inflection}} left
+    </span>
+    <ul id='filters'>
+      <li>
+        {{link-to 'All' 'orders' activeClass='selected'}}
+      </li>
+    </ul>
+
+    {{#if hasCompleted}}
+      <button id='clear-completed' {{action 'clearCompleted'}}>
+        Clear completed ({{completed.length}})
+      </button>
+    {{/if}}
+  </footer>
+</section>
+
+<footer id='info'>
+  <p>Double-click to edit a todo</p>
+</footer>
