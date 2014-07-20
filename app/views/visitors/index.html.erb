@@ -32,3 +32,13 @@
     </div>
   </form>
 </div>
+
+
+<div class="container">
+<%= simple_form_for @user do |f| %>
+  <%= f.input :name %>
+  <%= f.input :password %>
+  <%= f.button :submit %>
+<% end %>
+
+</div>
