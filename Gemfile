@@ -18,6 +18,7 @@ gem 'pg'
 gem 'pundit'
 gem 'simple_form'
 group :development do
+  gem 'growl', require: false
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
   gem 'capistrano', '~> 3.0.1'
@@ -29,6 +30,7 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-livereload'
+  gem 'ruby_gntp' , :require => false if RUBY_PLATFORM =~ /darwin/i  
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
