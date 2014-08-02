@@ -30,6 +30,7 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-livereload'
+  gem 'guard-spinach'
   gem 'ruby_gntp' , :require => false if RUBY_PLATFORM =~ /darwin/i  
   gem 'quiet_assets'
   gem 'rails_layout'
@@ -38,6 +39,8 @@ group :development do
   gem 'rb-inotify', :require=>false
 end
 group :development, :test do
+  gem 'spring-commands-rspec'
+  gem 'spring-commands-spinach'
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'pry-rescue'
