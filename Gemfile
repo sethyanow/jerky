@@ -11,11 +11,10 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'pundit'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'
-gem 'mysql'
-gem 'pg'
-gem 'pundit'
+gem 'sqlite3'
 gem 'simple_form'
 group :development do
   gem 'growl', require: false
@@ -38,10 +37,12 @@ group :development do
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
 end
+
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'spring-commands-spinach'
   gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
@@ -55,5 +56,5 @@ group :test do
   gem 'database_cleaner'
   gem 'faker'
   gem 'launchy'
-  gem 'selenium-webdriver'
+  gem 'poltergeist'
 end
