@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140720221430) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "carts", force: true do |t|
     t.integer  "user_id"
     t.datetime "created_at"
@@ -46,7 +49,7 @@ ActiveRecord::Schema.define(version: 20140720221430) do
 
   create_table "sizes", force: true do |t|
     t.string   "name"
-    t.float    "weight",     limit: 24
+    t.float    "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
