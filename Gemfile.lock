@@ -169,6 +169,7 @@ GEM
       hashie (>= 1.2, < 4)
       rack (~> 1.0)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     poltergeist (1.5.1)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -239,6 +240,7 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.3)
+    ruby_gntp (0.3.4)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -337,6 +339,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   omniauth
+  pg
   poltergeist
   pry-rails
   pry-rescue
@@ -350,6 +353,7 @@ DEPENDENCIES
   rb-fsevent
   rb-inotify
   rspec-rails
+  ruby_gntp
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   shoulda-matchers
