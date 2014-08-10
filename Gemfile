@@ -15,7 +15,6 @@ gem 'pundit'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'
 gem 'sqlite3'
-gem 'pg'
 gem 'simple_form'
 group :development do
   gem 'growl', require: false
@@ -30,8 +29,9 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-livereload'
+  gem 'rack-livereload'
   gem 'guard-spinach'
-  gem 'ruby_gntp' , :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'ruby_gntp' , :require => false if RUBY_PLATFORM =~ /darwin/i  
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
@@ -42,7 +42,6 @@ end
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'spring-commands-spinach'
-  gem 'spring-commands-any'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'pry-rails'
