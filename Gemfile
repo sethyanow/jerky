@@ -49,6 +49,7 @@ end
 group :development, :test do
   gem 'spring-commands-rspec'
   gem 'spring-commands-spinach'
+  gem 'spring-commands-any'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'pry-rails'

@@ -12,6 +12,7 @@ puts 'CREATED ADMIN USER: ' << user.email
 
 #this is pretty hacky
 flavors = Flavor.create([
+    {name: 'Sriracha'},
     {name: 'Fiery'},
     {name: 'Original'},
     {name: 'Fiery Hot'},
