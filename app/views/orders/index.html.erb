@@ -1,5 +1,5 @@
 <h1>JERKY <small>get your jerky right here</small></h1>
-
+<h3>Serving order <small><%= session[:order_id] %></small></h3>
 <% unless @order.items.length == 0 then %>
   <div class="well">
     <%= @order.items.each do |item| %>
@@ -9,13 +9,12 @@
 <% end %>
 <!--
 <form class="form-inline" role="form"> -->
-<%= form_for @order, class: "form-inline" do |f| %>
+<%= form_tag({controller: "items", action: "create"}, method: "post", class: "form-inline") do |f| %>
   <div class="form-group">
     <label class="sr-only" for="exampleInputEmail2">Flavor</label>
     <div class="input-group">
       <div class="input-group-addon">Flavor:</div>
-      <%= collection_select(:item, :flavor_id, Flavor.all, :id, :name) %>
-      <select class="form-control" name="flavor_id">
+      <select class="form-control" name="item[flavor_id]">
         <%= @flavors.each do |flavor| %>
           <option value=<%= flavor.id %>><%= flavor.name %></option>
         <% end %>
@@ -26,8 +25,7 @@
     <label class="sr-only" for="exampleInputEmail2">Type</label>
     <div class="input-group">
       <div class="input-group-addon">Type:</div>
-      <%= collection_select(:item, :type_id, Type.all, :id, :name) %>
-      <select class="form-control" name="type_id">
+      <select class="form-control" name="item[type_id]">
         <%= @types.each do |type| %>
           <option value=<%= type.id %>><%= type.name %></option>
         <% end %>

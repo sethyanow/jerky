@@ -2,11 +2,12 @@ class OrdersController < ApplicationController
   before_action :setup #, except: :index
 
   def index
-   # @foo =
+    @order ||= Order.new
+    session[:order_id] = @order.id if @order.save
   end
 
   def show
-
+    render "index"
   end
 
   def create
@@ -39,7 +40,6 @@ class OrdersController < ApplicationController
     @sizes ||= Size.all
     @types ||= Type.all
     @order = Order.find(params[:id]) if params[:id]
-    @order ||= Order.new
    # @order = Order.find(params[:order_id])
   end
 
