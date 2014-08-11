@@ -7,10 +7,12 @@ guard :bundler do
   # watch(/^.+\.gemspec/)
 end
 
-guard 'rails' do
-  watch('Gemfile.lock')
-  watch(%r{^(config|lib)/.*})
-end
+# make this conditional?
+# guard 'rails' do
+#   watch('Gemfile.lock')
+#   watch(%r{^(config|lib)/.*})
+# end
+
 guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch('config/application.rb')
   watch('config/environment.rb')
@@ -56,7 +58,7 @@ end
 
 
 
-guard 'pow',  restart_on_start: true,  restart_on_reload: true do
+guard 'pow' do
   watch('.powrc')
   watch('.powenv')
   watch('.rvmrc')
