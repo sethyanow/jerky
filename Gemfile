@@ -19,7 +19,7 @@ gem 'sqlite3'
 gem 'pg'
 gem 'simple_form'
 gem 'spork-rails'
-
+gem 'wiselinks'
 
 group :development do
   gem 'growl', require: false
@@ -35,6 +35,7 @@ group :development do
   gem 'guard-rspec'
   gem 'guard-livereload'
   gem 'guard-spork'
+  gem 'guard-pow', require: false
   gem 'rack-livereload'
   gem 'guard-spinach'
   gem 'ruby_gntp' , :require => false if RUBY_PLATFORM =~ /darwin/i

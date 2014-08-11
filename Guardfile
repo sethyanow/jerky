@@ -55,3 +55,16 @@ end
 #notification :growl
 
 
+
+guard 'pow',  restart_on_start: true,  restart_on_reload: true do
+  watch('.powrc')
+  watch('.powenv')
+  watch('.rvmrc')
+  watch('.ruby-version')
+  watch('Gemfile')
+  watch('Gemfile.lock')
+  watch('config/application.rb')
+  watch('config/environment.rb')
+  watch(%r{^config/environments/.*\.rb$})
+  watch(%r{^config/initializers/.*\.rb$})
+end
