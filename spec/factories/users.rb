@@ -1,12 +1,9 @@
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
 FactoryGirl.define do
-  factory :user do
-    name "Test User"
-    email "test@example.com"
-    password "please123"
-
-    trait :admin do
-      role 'admin'
-    end
-
+  factory :user, :class => 'Users' do
+    name "MyString"
+    email "MyString"
+    password_digest "MyString"
   end
 end
