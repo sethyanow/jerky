@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, :setup #, except: :index
+  before_action :setup
 
   def index
 
@@ -22,6 +22,5 @@ class OrdersController < ApplicationController
     @item ||= Item.new
     @order = session[:order_id] ? Order.find(session[:order_id]) : Order.new
     session[:order_id] =  @order.id if @order.save
-    user_session[:order_id] = session[:order_id]
   end
 end

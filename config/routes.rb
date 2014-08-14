@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   root to: 'orders#index'
 
   #devise_for :users
-  resources :users
+  resources :users do
+    resources :session
+  end
   resources :orders
   resources :items
 end
