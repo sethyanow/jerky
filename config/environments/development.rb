@@ -55,5 +55,5 @@ Rails.application.configure do
   #config.middleware.insert_before Rack::Lock, Rack::LiveReload
 
   # Set to one of [:active_record_store, :drb_store, :mem_cache_store, :cookie_store]
-  config.action_controller.session_store = :active_record_store
+  #config.action_controller.session_store = :active_record_store
 end

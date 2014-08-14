@@ -7,11 +7,11 @@ guard :bundler do
   # watch(/^.+\.gemspec/)
 end
 
-# make this conditional?
-# guard 'rails' do
-#   watch('Gemfile.lock')
-#   watch(%r{^(config|lib)/.*})
-# end
+#run with the server regardless of pow
+guard 'rails' do
+  watch('Gemfile.lock')
+  watch(%r{^(config|lib)/.*})
+end
 
 guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch('config/application.rb')

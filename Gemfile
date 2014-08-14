@@ -10,8 +10,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'bootstrap-sass'
-gem 'devise'
-gem 'pundit'
+gem 'bcrypt'
+gem 'activerecord-session_store'
+#gem 'pundit'
 gem 'omniauth'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'

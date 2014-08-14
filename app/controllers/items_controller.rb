@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!
+  #before_action :authenticate_user!
   #after_action :verify_authorized
 
   def create
     item = Item.create(order_params)
-   # item.order_id = session[:order_id]
+   #j item.order_id = session[:order_id]
     if item.save then
       flash[:notice] = "Item Saved"
       redirect_to order_path(item.order_id)
