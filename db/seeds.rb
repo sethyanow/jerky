@@ -31,3 +31,6 @@ Size.create(name: '(16 oz) 1 Pound Bag', weight: 16)
 Size.create(name: '(8 oz) 1/2 Pound Bag', weight: 8)
 Size.create(name: '(3.5 oz) Standard Bag', weight: 3.5)
 Size.create(name: '(1.75 oz) Sample Bag', weight: 1.75)
+
+Type.create(name: "Slabs")
+Type.create(name: "Strips")

@@ -1,14 +1,21 @@
 <h1>JERKY <small>get your jerky right here</small></h1>
 <h3>Serving order <small><%= session[:order_id] %></small></h3>
-<% unless @order.items.length == 0 then %>
+<% unless @order.items.count == 0 then %>
   <div class="well">
+    <ul class="list-group">
     <%= @order.items.each do |item| %>
-      <%= item %>
+      <li class="list-group-item">
+        <span class="badge">$6</span>
+        <%= item.quantity %> <%= "Bag".pluralize(item.quantity) %> of delicous jerky!
+        <br />
+        <%= item.flavor.name %>
+        <%= item.size.name %>
+        <%= item.type.name %>
+      </li>
     <% end %>
+  </ul>
   </div>
 <% end %>
-<!--
-<form class="form-inline" role="form"> -->
 <%= form_tag({controller: "items", action: "create"}, method: "post", class: "form-inline") do |f| %>
   <div class="form-group">
     <label class="sr-only" for="exampleInputEmail2">Flavor</label>
@@ -36,7 +43,7 @@
     <label class="sr-only" for="exampleInputEmail2">Size</label>
     <div class="input-group">
       <div class="input-group-addon">Size:</div>
-      <select class="form-control" name="item[type_id]">
+      <select class="form-control" name="item[size_id]">
         <%= Size.all.each do |size| %>
           <option value=<%= size.id %>><%= size.name %></option>
         <% end %>

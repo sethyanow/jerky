@@ -4,7 +4,6 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.create(order_params)
-   #j item.order_id = session[:order_id]
     if item.save then
       flash[:notice] = "Item Saved"
       redirect_to order_path(item.order_id)
