@@ -3,9 +3,11 @@ Rails.application.routes.draw do
 
   root to: 'orders#index'
 
+  resources :sessions
+
   #devise_for :users
   resources :users do
-    resources :session
+    resources :sessions
   end
   resources :orders
   resources :items

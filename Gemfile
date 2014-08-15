@@ -54,6 +54,7 @@ group :development, :test do
   gem 'spring-commands-any'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem 'rspec-activemodel-mocks'
   gem 'pry-rails'
   gem 'pry-rescue'
   gem 'rspec-rails'
