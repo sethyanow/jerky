@@ -1,5 +1,5 @@
 <h1>JERKY <small>get your jerky here</small></h1>
-<h3>Serving order <small><%= session[:order_id] %></small></h3>
+<h3>Serving order <small><%= session[:cart_id] %></small></h3>
 <% unless @cart.items.count == 0 then %>
   <div class="well">
     <ul class="list-group">

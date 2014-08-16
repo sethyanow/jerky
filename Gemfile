@@ -24,6 +24,7 @@ gem 'mysql2'
 gem 'simple_form'
 gem 'spork-rails'
 gem 'wiselinks'
+gem 'activemerchant'
 
 group :development do
   gem 'growl', require: false
