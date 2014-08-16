@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  #has_secure_password
+  belongs_to :cart
 
   def self.find_or_create_from_auth_hash (auth)
 

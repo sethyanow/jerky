@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140816041252) do
+ActiveRecord::Schema.define(version: 20140816054306) do
 
   create_table "carts", force: true do |t|
     t.integer  "user_id"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20140816041252) do
     t.string   "uid"
     t.string   "provider"
     t.string   "name"
+    t.integer  "cart_id"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

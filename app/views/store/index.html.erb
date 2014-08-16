@@ -1,0 +1,62 @@
+<h1>JERKY <small>get your jerky here</small></h1>
+<h3>Serving order <small><%= session[:order_id] %></small></h3>
+<% unless @cart.items.count == 0 then %>
+  <div class="well">
+    <ul class="list-group">
+    <% @cart.items.each do |item| %>
+      <li class="list-group-item">
+        <span class="badge"><%= number_to_currency(item.price) %></span>
+        <h4>(<%= item.quantity %>)
+          <%= item.size.name %>
+          <%= "Bag".pluralize(item.quantity) %> of
+          <%= item.flavor.name %> flavor
+          <%= item.type.name %>
+        </h4>
+      </li>
+    <% end %>
+  </ul>
+  </div>
+<% end %>
+<%= form_tag({controller: "items", action: "create"}, method: "post", class: "form-inline") do |f| %>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail2">Flavor</label>
+    <div class="input-group">
+      <div class="input-group-addon">Flavor:</div>
+      <select class="form-control" name="item[flavor_id]">
+        <%= Flavor.all.each do |flavor| %>
+          <option value=<%= flavor.id %>><%= flavor.name %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail2">Type</label>
+    <div class="input-group">
+      <div class="input-group-addon">Type:</div>
+      <select class="form-control" name="item[type_id]">
+        <%= Type.all.each do |type| %>
+          <option value=<%= type.id %>><%= type.name %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+    <div class="form-group">
+    <label class="sr-only" for="exampleInputEmail2">Size</label>
+    <div class="input-group">
+      <div class="input-group-addon">Size:</div>
+      <select class="form-control" name="item[size_id]">
+        <%= Size.all.each do |size| %>
+          <option value=<%= size.id %>><%= size.name %></option>
+        <% end %>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">Quantity:</div>
+      <input class="form-control" type="text" name="item[quantity]" placeholder="Enter quantity" value="1">
+    </div>
+  </div>
+  <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
+  <button type="submit" class="btn btn-default">Add to order</button>
+<% end %>

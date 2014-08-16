@@ -1,12 +1,10 @@
 class ItemsController < ApplicationController
-  #before_action :authenticate_user!
-  #after_action :verify_authorized
 
   def create
     item = Item.create(order_params)
     if item.save then
       flash[:notice] = "Item Saved"
-      redirect_to order_path(item.order_id)
+      redirect_to '/'
     else
       #handle the error?
       flash[:error] = "Error"
@@ -17,6 +15,6 @@ class ItemsController < ApplicationController
 
   private
   def order_params
-    params.require(:item).permit(:flavor_id, :type_id, :order_id, :size_id, :quantity)
+    params.require(:item).permit(:flavor_id, :type_id, :cart_id, :size_id, :quantity)
   end
 end
