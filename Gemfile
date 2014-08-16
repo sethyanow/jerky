@@ -20,6 +20,7 @@ gem 'high_voltage'
 gem 'pg'
 gem 'wiselinks'
 gem 'activemerchant'
+gem 'simple_form'
 
 group :development do
   gem 'growl', require: false
@@ -39,7 +40,7 @@ group :development do
   gem 'guard-pow', require: false
   gem 'rack-livereload'
   gem 'guard-spinach'
-  gem 'ruby_gntp' , :require => false if RUBY_PLATFORM =~ /darwin/i
+  gem 'ruby_gntp' , :require => false
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'rb-fchange', :require=>false
