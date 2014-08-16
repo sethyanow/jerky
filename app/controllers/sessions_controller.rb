@@ -3,14 +3,24 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
+    @user = User.find_or_create_from_auth_hash(auth_hash)
+    if @user
+      self.current_user = @user
       flash[:success] = "Thanks for logging in!"
-      redirect_to orders_path
+      redirect_to '/'
     else
-      flash[:error] = "There was a problem logging in. Please check your email and password."
+      flash[:error] = "There was a problem logging in. Give it another try or hit the help button."
       render action: 'new'
     end
+  end
+
+  def create
+
+  end
+
+  protected
+
+  def auth_hash
+    request.env['omniauth.auth']
   end
 end
