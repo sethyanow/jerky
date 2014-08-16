@@ -21,6 +21,7 @@ gem 'pg'
 gem 'wiselinks'
 gem 'activemerchant'
 gem 'simple_form'
+gem 'bcrypt'
 
 group :development do
   gem 'growl', require: false
