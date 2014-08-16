@@ -55,9 +55,8 @@ Spork.prefork do
     # https://relishapp.com/rspec/rspec-rails/docs
     config.infer_spec_type_from_file_location!
 
-
-  # The settings below are suggested to provide a good initial experience
-  # with RSpec, but feel free to customize to your heart's content.
+    # The settings below are suggested to provide a good initial experience
+    # with RSpec, but feel free to customize to your heart's content.
     # These two settings work together to allow you to limit a spec run
     # to individual examples or groups you care about by tagging them with
     # `:focus` metadata. When nothing is tagged with `:focus`, all examples
@@ -65,9 +64,9 @@ Spork.prefork do
     config.filter_run :focus
     config.run_all_when_everything_filtered = true
 
-  #   config.use_transactional_fixtures = true
-  #   config.infer_base_class_for_anonymous_controllers = false
-  #   config.order = "random"
+    config.use_transactional_fixtures = true
+    config.infer_base_class_for_anonymous_controllers = false
+    config.order = "random"
 
     # Many RSpec users commonly either run the entire suite or an individual
     # file, and it's useful to allow more verbose output when running an

@@ -52,6 +52,7 @@ end
 
 group :development, :test do
   gem 'spork-rails'
+  gem 'database_cleaner'
   gem 'spring-commands-rspec'
   gem 'spring-commands-spinach'
   gem 'spring-commands-any'
@@ -70,7 +71,6 @@ end
 group :test do
   gem 'capybara'
   gem 'capybara-screenshot'
-  gem 'database_cleaner'
   gem 'faker'
   gem 'launchy'
   gem 'poltergeist'
