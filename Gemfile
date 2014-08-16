@@ -20,6 +20,7 @@ gem 'high_voltage'
 gem 'pg'
 gem 'wiselinks'
 gem 'activemerchant'
+gem 'active_shipping'
 gem 'simple_form'
 gem 'bcrypt'
 
