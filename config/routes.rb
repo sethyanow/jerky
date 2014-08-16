@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  get '/auth/:provider/callback', to: 'sessions#create'
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match '/signout', to: 'sessions#destroy', via: [:get], as: :signout
 
   root to: 'orders#index'
 

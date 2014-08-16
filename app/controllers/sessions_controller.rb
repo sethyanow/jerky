@@ -1,21 +1,22 @@
 class SessionsController < ApplicationController
   def new
+    redirect_to '/'
   end
 
   def create
-    @user = User.find_or_create_from_auth_hash(auth_hash)
-    if @user
-      self.current_user = @user
-      flash[:success] = "Thanks for logging in!"
-      redirect_to '/'
+    user = User.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"]) || User.create_with_omniauth(auth_hash)
+    if user
+      session[:user_id] = user.id
+      redirect_to '/', notice: "Thanks for logging in!"
     else
       flash[:error] = "There was a problem logging in. Give it another try or hit the help button."
-      render action: 'new'
+      #render action: 'new'
     end
   end
 
-  def create
-
+  def destroy
+      session[:user_id] = nil
+      redirect_to '/', notice: "Thanks for logging out!"
   end
 
   protected
