@@ -9,6 +9,6 @@ class Item < ActiveRecord::Base
   validates :quantity, presence: true
 
   def price
-    self.size.base_price * quantity
+    (self.size.base_price * quantity) * (0.7) * (0.9)
   end
 end
