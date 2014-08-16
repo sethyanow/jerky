@@ -20,7 +20,7 @@ gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'
 gem 'sqlite3'
 gem 'pg'
-gem 'mysql2'
+#gem 'mysql2'
 gem 'simple_form'
 gem 'spork-rails'
 gem 'wiselinks'
@@ -66,6 +66,7 @@ group :development, :test do
 end
 group :production do
   gem 'puma'
+  gem 'rails_12factor'
 end
 group :test do
   gem 'capybara'
