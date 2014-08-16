@@ -7,4 +7,8 @@ class Item < ActiveRecord::Base
   belongs_to :type
 
   validates :quantity, presence: true
+
+  def price
+    self.size.base_price * quantity
+  end
 end

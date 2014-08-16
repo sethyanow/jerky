@@ -5,7 +5,7 @@
     <ul class="list-group">
     <% @order.items.each do |item| %>
       <li class="list-group-item">
-        <span class="badge">$6</span>
+        <span class="badge"><%= number_to_currency(item.price) %></span>
         <h4>(<%= item.quantity %>)
           <%= item.size.name %>
           <%= "Bag".pluralize(item.quantity) %> of

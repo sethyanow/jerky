@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140814141357) do
+ActiveRecord::Schema.define(version: 20140816021413) do
 
   create_table "carts", force: true do |t|
     t.integer  "user_id"
@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20140814141357) do
     t.float    "weight",     limit: 24
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "base_price", limit: 24
   end
 
   create_table "types", force: true do |t|

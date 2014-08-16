@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   resources :sessions
 
   #devise_for :users
-  resources :users do
-    resources :sessions
-  end
+  resources :users
+
   resources :orders
   resources :items
 end

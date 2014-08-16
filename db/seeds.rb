@@ -27,10 +27,10 @@ flavors = Flavor.create([
 
 puts '[seed] Created Flavors, count: ' << flavors.count
 
-Size.create(name: '1 Pound (16 oz)', weight: 16)
-Size.create(name: '1/2 Pound (8 oz)', weight: 8)
-Size.create(name: 'Standard (3.5 oz)', weight: 3.5)
-Size.create(name: 'Sample (1.75 oz)', weight: 1.75)
+Size.create(name: '1 Pound (16 oz)', weight: 16, base_price: 24.95)
+Size.create(name: '1/2 Pound (8 oz)', weight: 8, base_price: 13.25)
+Size.create(name: 'Standard (3.5 oz)', weight: 3.5, base_price: 6.95)
+Size.create(name: 'Sample (1.75 oz)', weight: 1.75, base_price: 3.99)
 
 Type.create(name: "Slabs")
 Type.create(name: "Strips")
