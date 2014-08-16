@@ -10,6 +10,12 @@ class ItemsController < ApplicationController
       flash[:error] = "Error"
       redirect_to "/"
     end
+  end
+
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
+    redirect_to '/'
 
   end
 

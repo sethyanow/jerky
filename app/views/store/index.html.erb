@@ -12,6 +12,9 @@
           <%= item.flavor.name %> flavor
           <%= item.type.name %>
         </h4>
+        <button type="button" class="btn btn-default btn-lg">
+          <%= link_to "remove", item, method: "delete" %>
+        </button>
       </li>
     <% end %>
   </ul>
