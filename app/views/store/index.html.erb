@@ -1,6 +1,6 @@
 <h1>JERKY <small>get your jerky here</small></h1>
 <h3>Serving order <small><%= session[:cart_id] %></small></h3>
-<p>Subtotal: <%= number_to_currency(@cart.subtotal) %></p>
+<h4>Subtotal: <%= number_to_currency(@cart.subtotal) %></h4>
 <% unless @cart.items.count == 0 then %>
   <div class="well">
     <ul class="list-group">
