@@ -10,7 +10,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'bootstrap-sass'
-gem 'bcrypt'
 gem 'activerecord-session_store'
 gem 'pundit'
 gem 'omniauth'
@@ -18,11 +17,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem 'figaro', '>= 1.0.0.rc1'
 gem 'high_voltage'
-gem 'sqlite3'
 gem 'pg'
-#gem 'mysql2'
-gem 'simple_form'
-gem 'spork-rails'
 gem 'wiselinks'
 gem 'activemerchant'
 
@@ -53,6 +48,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'spork-rails'
   gem 'spring-commands-rspec'
   gem 'spring-commands-spinach'
   gem 'spring-commands-any'
