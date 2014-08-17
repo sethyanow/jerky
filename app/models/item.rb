@@ -8,6 +8,9 @@ class Item < ActiveRecord::Base
 
   validates :quantity, presence: true
   validates :size, presence: true
+  validates :flavor, presence: true
+  validates :type, presence: true
+
 
   def price
     (self.size.base_price * quantity) * (0.7)

@@ -8,14 +8,12 @@ class StoreController < ApplicationController
     @item ||= Item.new
 
     if current_user
-      # TODO: Merge session cart with user cart if logging in w/ a cart
-      @user = User.find(current_user.id)  #set the cart if logged in
+      @user = User.find(current_user.id)
 
-      @cart = @user.cart_id ? Cart.find(@user.cart_id) : Cart.create
+      @cart = Cart.where(user_id: @user.id).first || Cart.create
       session[:cart_id] =  @cart.id
-
-      @user.cart_id = @cart.id
-      @user.save
+      @cart.user_id = @user.id
+      @cart.save
     else
       session[:cart_id] = 0
       render 'layouts/signin'
