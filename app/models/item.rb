@@ -7,8 +7,12 @@ class Item < ActiveRecord::Base
   belongs_to :type
 
   validates :quantity, presence: true
+  validates :size, presence: true
+  validates :flavor, presence: true
+  validates :type, presence: true
+
 
   def price
-    (self.size.base_price * quantity) * (0.7) * (0.9)
+    (self.size.base_price * quantity) * (0.7)
   end
 end

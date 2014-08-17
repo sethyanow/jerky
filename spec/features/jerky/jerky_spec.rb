@@ -6,18 +6,29 @@ feature "Jerky" do
   end
   describe "a place that lets people enjoy delicous jerky", js: true do
 
-    context "allows a user to log in"  do
-      it "using twitter auth"
-      it "using facebook auth"
+    context "with valid authentication"  do
+      context "logs in a user using" do
+        it "twitter auth"
+        it "facebook auth"
+      end
     end
 
+    context "without valid authentication" do
+      it "prevents a user from logging in"
+    end
 
     it "lets a user choose a selection of jerky" do
       expect(page).to have_content("Please sign in using the links above")
-      #screenshot_and_save_page
-      puts "run"
     end
 
-    it "is way cool"
+    it "adds a selection to the cart"
+
+    it "removes a selection from the cart"
+
+    it "modifies a selection in the cart"
+
+    it "shows the cart subtotal"
+
+    it "can "
   end
 end

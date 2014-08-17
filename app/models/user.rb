@@ -1,10 +1,17 @@
 class User < ActiveRecord::Base
-  belongs_to :cart
+  has_one :cart
+  has_many :orders
+
+
+  # validates :email,     presence: true
+  validates :name,      presence: true
+  validates :uid,       presence: true
+  validates :provider,  presence: true
 
   def self.from_omniauth(auth)
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
   end
-    
+
   def self.create_from_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
@@ -12,27 +19,8 @@ class User < ActiveRecord::Base
       user.nickname = auth.info.nickname
       user.name = auth.info.name
       user.image = auth.info.image
+      user.email = auth.info.email
       user.description = auth["description"]
-    end
-  end
-  
-  
-  
-  def self.find_or_create_from_auth_hash (auth)
-
-    #find_by_auth_hash(hash)
-    self.create_with_omniauth(auth)
-  end
-
-  def self.find_by_auth_hash (auth)
-
-  end
-
-  def self.create_with_omniauth (auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.email = auth["email"]
-      user.uid = auth["uid"]
     end
   end
 end
