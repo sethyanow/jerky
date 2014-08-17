@@ -14,7 +14,10 @@
     </header>
     <main role="main">
        <%= render 'layouts/messages' %>
-       <%= yield %>
+      <% if current_user %>
+        <h1>Signed in as @<%= current_user.nickname %></h1>
+      <% end %>
+      <%= yield %>
     </main>
   </body>
 </html>

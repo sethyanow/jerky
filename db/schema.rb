@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140816054306) do
+ActiveRecord::Schema.define(version: 20140817073140) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "carts", force: true do |t|
     t.integer  "user_id"
@@ -57,10 +60,10 @@ ActiveRecord::Schema.define(version: 20140816054306) do
 
   create_table "sizes", force: true do |t|
     t.string   "name"
-    t.float    "weight",     limit: 24
+    t.float    "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "base_price", limit: 24
+    t.float    "base_price"
   end
 
   create_table "types", force: true do |t|
@@ -84,8 +87,11 @@ ActiveRecord::Schema.define(version: 20140816054306) do
     t.datetime "updated_at"
     t.string   "uid"
     t.string   "provider"
-    t.string   "name"
+    t.string   "nickname"
     t.integer  "cart_id"
+    t.string   "name"
+    t.string   "image"
+    t.text     "description"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

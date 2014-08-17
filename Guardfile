@@ -8,10 +8,10 @@ guard :bundler do
 end
 
 #run with the server regardless of pow
-# guard 'rails' do
-#   watch('Gemfile.lock')
-#   watch(%r{^(config|lib)/.*})
-# end
+guard 'rails' do
+  watch('Gemfile.lock')
+  watch(%r{^(config|lib)/.*})
+end
 
 guard 'spork', :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch('config/application.rb')
