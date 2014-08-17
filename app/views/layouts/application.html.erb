@@ -15,7 +15,7 @@
     <main role="main">
        <%= render 'layouts/messages' %>
       <% if current_user %>
-        <h1>Signed in as @<%= current_user.nickname %></h1>
+        <h1>Signed in as @<%= current_user.nickname || current_user.name %></h1>
       <% end %>
       <%= yield %>
     </main>
