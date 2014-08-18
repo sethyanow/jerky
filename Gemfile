@@ -23,6 +23,8 @@ gem 'activemerchant'
 gem 'active_shipping'
 gem 'simple_form'
 gem 'bcrypt'
+gem 'seedbank'
+gem 'rails_admin'
 
 group :development do
   gem 'growl', require: false
