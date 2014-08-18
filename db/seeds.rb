@@ -11,21 +11,23 @@
 # See http://railsapps.github.io/rails-environment-variables.html
 
 #this is pretty hacky
-flavors = Flavor.create([
-    {name: 'Sriracha'},
-    {name: 'Fiery'},
-    {name: 'Original'},
-    {name: 'Fiery Hot'},
-    {name: 'Teriyaki'},
-    {name: 'Fiery Teriyaki'},
-    {name: 'BBQ'},
-    {name: 'Fiery BBQ'},
-    {name: 'Lower Salt Original'},
-    {name: 'Lower Salt Fiery Hot'},
-    {name: 'Black Pepper & Garlic'}
-  ])
+[
+    'Sriracha',
+    'Fiery',
+    'Original',
+    'Fiery Hot',
+    'Teriyaki',
+    'Fiery Teriyaki',
+    'BBQ',
+    'Fiery BBQ',
+    'Lower Salt Original',
+    'Lower Salt Fiery Hot',
+    'Black Pepper & Garlic'
+  ].each do |flavor|
+    Flavor.create({name: flavor})
+  end
 
-puts '[seed] Created Flavors, count: ' << flavors.count
+puts '[seed] Created Flavors'
 
 Size.create(name: '1 Pound (16 oz)', weight: 16, base_price: 24.95)
 Size.create(name: '1/2 Pound (8 oz)', weight: 8, base_price: 13.25)
