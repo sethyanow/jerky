@@ -24,9 +24,9 @@ gem 'active_shipping'
 gem 'simple_form'
 gem 'bcrypt'
 gem 'seedbank'
+gem 'rails_admin'
 
 group :development do
-  gem 'rails_admin'
   gem 'growl', require: false
   gem 'better_errors'
   gem 'binding_of_caller'
