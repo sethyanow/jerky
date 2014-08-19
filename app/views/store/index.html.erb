@@ -56,11 +56,11 @@
           <%= item.size.name %>
           <%= "Bag".pluralize(item.quantity) %> of
           <%= item.flavor.name %> flavor
-          <%= item.type.name %>
+          <%= item.type.name %> 
+          <button type="button" class="btn btn-default btn-lg">
+            <%= link_to "remove", item, method: "delete" %>
+          </button>
         </h4>
-        <button type="button" class="btn btn-default btn-lg">
-          <%= link_to "remove", item, method: "delete" %>
-        </button>
       </li>
     <% end %>
   </ul>
