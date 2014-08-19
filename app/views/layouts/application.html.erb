@@ -14,10 +14,6 @@
     </header>
     <main role="main">
        <%= render 'layouts/messages' %>
-      <% if current_user %>
-        <h1>Signed in as <img class="image-inline" alt="" src="http://placekitten.com/g/48/48"> @<%= current_user.nickname || current_user.name %></h1>
-        <img src="<%= current_user.image %>" alt="<%= current_user.name %>" />
-      <% end %>
       <%= yield %>
     </main>
   </body>

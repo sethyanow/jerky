@@ -14,6 +14,11 @@
       <ul class="nav navbar-nav">
         <%= render 'layouts/navigation_links' %>
       </ul>
+      <div class="navbar-header navbar-right">
+      <% if current_user %>
+        <a><img class="image-inline" src="<%= current_user.image || 'http://placekitten.com/g/48/48' %>" alt="<%= current_user.name %>" /> </a>
+      <% end %>
+      </div>
     </div>
   </div>
 </nav>
