@@ -110,6 +110,9 @@ GEM
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
+    fuubar (2.0.0)
+      rspec (~> 3.0)
+      ruby-progressbar (~> 1.4)
     gherkin-ruby (0.3.2)
     growl (1.0.3)
     guard (2.6.1)
@@ -309,6 +312,7 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
+    ruby-progressbar (1.5.1)
     ruby_gntp (0.3.4)
     safe_yaml (1.0.3)
     sass (3.2.19)
@@ -385,6 +389,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro
+  fuubar
   growl
   guard-bundler
   guard-livereload

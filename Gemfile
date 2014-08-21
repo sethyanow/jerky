@@ -25,6 +25,7 @@ gem 'simple_form'
 gem 'bcrypt'
 gem 'seedbank'
 gem 'rails_admin'
+gem 'fuubar'
 
 group :development do
   gem 'growl', require: false
