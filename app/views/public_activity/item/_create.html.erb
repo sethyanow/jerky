@@ -1,8 +1,11 @@
 <% if activity.trackable %>
   <img src="<%= activity.owner.image if activity.owner %>" alt="portrait" />
-  <h3><%= link_to activity.owner.name, activity.owner if activity.owner %>
-  added an item to their cart</h3>
-  <%= link_to activity.trackable.flavor.name, activity.trackable %>
+  <h3>
+    <%= link_to "@#{activity.owner.nickname}", activity.owner if activity.owner %>
+    added an item to their cart! Flavor:
+    <%= link_to activity.trackable.flavor.name, activity.trackable %>
+
+  </h3>
 <% else %>
 removed
 <% end %>
