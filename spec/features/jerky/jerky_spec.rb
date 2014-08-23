@@ -20,7 +20,7 @@ feature "Jerky" do
 
 
 
-          expect(page).to have_content("Thanks for logging in!")
+          expect(page).to_not have_content("Thanks for logging in!")
 
         end
 
