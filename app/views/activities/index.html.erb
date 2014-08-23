@@ -1,7 +1,9 @@
 <h1>Friends' Activities</h1>
 
+<ul class="activities">
 <% @activities.each do |activity| %>
-  <div class="activity">
-    <%= render_activity activity %>
-  </div>
+    <% if activity.trackable && activity.owner %>
+    <li class="activity"><%= render_activity activity %></li>
+    <% end %>
 <% end %>
+</ul>

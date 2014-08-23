@@ -3,11 +3,11 @@ class ItemsController < ApplicationController
   def create
     item = Item.create(order_params)
     if item.save then
-      flash[:notice] = "Item Saved"
-      redirect_to '/'
+      item.create_activity :create, owner: current_user
+      redirect_to '/', notice: "Item Saved!"
     else
       #handle the error?
-      flash[:error] = "Error"
+      flash[:error] = "Error [dogscience.jpg]"
       redirect_to "/"
     end
   end
