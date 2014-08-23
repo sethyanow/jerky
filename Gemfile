@@ -26,6 +26,8 @@ gem 'bcrypt'
 gem 'seedbank'
 gem 'rails_admin'
 gem 'fuubar'
+gem 'public_activity'
+
 
 group :development do
   gem 'growl', require: false

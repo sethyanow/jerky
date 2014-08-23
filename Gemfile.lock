@@ -228,6 +228,11 @@ GEM
     pry-rescue (1.4.1)
       interception (>= 0.5)
       pry
+    public_activity (1.4.2)
+      actionpack (>= 3.0.0)
+      activerecord (>= 3.0)
+      i18n (>= 0.5.0)
+      railties (>= 3.0.0)
     puma (2.9.0)
       rack (>= 1.1, < 2.0)
     pundit (0.2.3)
@@ -417,6 +422,7 @@ DEPENDENCIES
   poltergeist
   pry-rails
   pry-rescue
+  public_activity
   puma
   pundit
   quiet_assets

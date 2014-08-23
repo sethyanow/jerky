@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   has_one :cart
   has_many :orders
 
+  include PublicActivity::Model
+  tracked owner: ->(controller, model) {controller && controller.current_user}
 
   # validates :email,     presence: true
   validates :name,      presence: true
@@ -11,7 +13,7 @@ class User < ActiveRecord::Base
   def admin?
     true
   end
-  
+
   def self.from_omniauth(auth)
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
   end
