@@ -27,7 +27,8 @@ gem 'seedbank'
 gem 'rails_admin'
 gem 'fuubar'
 gem 'public_activity'
-
+gem 'stripe'
+gem 'stripe_event'
 
 group :development do
   gem 'growl', require: false
