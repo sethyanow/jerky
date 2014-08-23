@@ -8,7 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-# gem 'spring', group: :development
+gem 'spring', group: :development
 gem 'bootstrap-sass'
 gem 'activerecord-session_store'
 gem 'pundit'
@@ -56,9 +56,9 @@ end
 group :development, :test do
   gem 'spork-rails'
   gem 'database_cleaner'
-#   gem 'spring-commands-rspec'
-#   gem 'spring-commands-spinach'
-#   gem 'spring-commands-any'
+  gem 'spring-commands-rspec'
+  gem 'spring-commands-spinach'
+  gem 'spring-commands-any'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'rspec-activemodel-mocks'
