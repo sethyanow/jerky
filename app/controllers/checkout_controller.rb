@@ -18,11 +18,15 @@ class CheckoutController < ApplicationController
           :card => token,
           :description => "testing@example.com"
         )
-        redirect_to '/', notice: "charge successful"
+        render "thanks", notice: "charge successful"
       rescue Stripe::CardError => e
         # The card has been declined
-        redirect_to 'checkout#index', notice: e
+        redirect_to '/checkout', notice: e
       end
     end
+  end
+
+  def thanks
+
   end
 end

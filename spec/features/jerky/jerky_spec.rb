@@ -10,6 +10,9 @@ feature "Jerky" do
   end
   describe "a place that lets people enjoy delicous jerky", js: true do
     context "from a selection of jerky" do
+      it "after the user's logged in" do
+        expect(page).to have_content("Foobar")
+      end
 
       it "shows the proper options for choosing jerky" do
         # => Makes sure the seed values are loaded properly
@@ -17,7 +20,8 @@ feature "Jerky" do
 
         #screenshot_and_open_image
 
-        expect(page).to have_content("Sriracha")
+        #make sure we're logged in
+
       end
 
       it "adds a selection to the cart"

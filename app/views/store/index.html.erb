@@ -44,6 +44,7 @@
   </div>
   <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
   <button type="submit" class="btn btn-default">Add to order</button>
+  <%= link_to "Checkout", checkout_path %>
 <% end %>
 
 <% unless @cart.items.count == 0 then %>
@@ -56,7 +57,7 @@
           <%= item.size.name %>
           <%= "Bag".pluralize(item.quantity) %> of
           <%= item.flavor.name %> flavor
-          <%= item.type.name %>  
+          <%= item.type.name %>
           <%= link_to "remove", item, method: :delete %>
           </button>
         </h4>
