@@ -14,6 +14,9 @@ class StoreController < ApplicationController
       session[:cart_id] =  @cart.id
       @cart.user_id = @user.id
       @cart.save
+
+      @user.cart_id = @cart.id
+      @user.save
     else
       session[:cart_id] = 0
       render 'layouts/signin'
