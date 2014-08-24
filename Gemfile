@@ -29,6 +29,7 @@ gem 'fuubar'
 gem 'public_activity'
 gem 'stripe'
 gem 'stripe_event'
+gem 'rack-timeout'
 
 group :development do
   gem 'growl', require: false
