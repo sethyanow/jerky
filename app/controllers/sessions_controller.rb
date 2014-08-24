@@ -1,13 +1,18 @@
 class SessionsController < ApplicationController
   skip_before_filter :verify_authenticity_token
+
+  def index
+    redirect_to '/store' if current_user
+  end
+
   def new
-    redirect_to '/'
+    redirect_to '/store' if current_user
   end
 
   def create
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
-    redirect_to '/', notice: "Signed in. Welcome, " + auth_hash.info.name
+    redirect_to '/store', notice: "Signed in. Welcome, " + auth_hash.info.name
   end
 
   def destroy
