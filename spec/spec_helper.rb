@@ -11,10 +11,9 @@ Spork.prefork do
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   require 'capybara/poltergeist'
+  require 'capybara/rspec'
   require 'capybara-screenshot'
   require 'capybara-screenshot/rspec'
-
-
 
   # Requires supporting ruby files with custom matchers and macros, etc, in
   # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -123,6 +122,7 @@ end
 Spork.each_run do
   # This code will be run each time you run your specs.
   puts "[DEBUG] Spork Run Starting"
+  require "#{Rails.root}/db/seeds.rb"
 end
 
 # --- Instructions ---

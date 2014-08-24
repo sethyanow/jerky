@@ -19,6 +19,7 @@ class StoreController < ApplicationController
       @user.save
     else
       session[:cart_id] = 0
+      #how the fuck
       render 'layouts/signin'
     end
 

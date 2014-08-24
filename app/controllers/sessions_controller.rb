@@ -1,11 +1,11 @@
 class SessionsController < ApplicationController
+  skip_before_filter :verify_authenticity_token
   def new
     redirect_to '/'
   end
 
   def create
     user = User.from_omniauth(env["omniauth.auth"])
-    #eraise env['omniauth.auth'].to_yamlr
     session[:user_id] = user.id
     redirect_to '/', notice: "Signed in. Welcome, " + auth_hash.info.name
   end

@@ -29,4 +29,12 @@ class User < ActiveRecord::Base
       user.description = auth["description"]
     end
   end
+
+  def self.create_guest
+    create! do |user|
+      user.provider = "Guest"
+      user.uid = "0"
+      user.name = "Guest"
+    end
+  end
 end

@@ -2,40 +2,23 @@ require 'spec_helper'
 
 feature "Jerky" do
   before :each do
-    visit '/'
+    visit '/auth/developer'
+
+    fill_in 'Name', with: "Foobar"
+    fill_in 'Email', with: "meow@test.example"
+    click_button 'Sign In'
   end
   describe "a place that lets people enjoy delicous jerky", js: true do
+    context "from a selection of jerky" do
 
-    context "with valid authentication"  do
-
-      context "logs in a user using" do
-
-        example "twitter auth" do
-
-          click_link "Sign in with Twitter"
-
-          fill_in 'Username', with: ENV['twitter_test_user']
-          fill_in 'Password', with: ENV['twitter_test_password']
+      it "shows the proper options for choosing jerky" do
+        # => Makes sure the seed values are loaded properly
 
 
+        #screenshot_and_open_image
 
-
-          expect(page).to_not have_content("Thanks for logging in!")
-
-        end
-
-
-        example "facebook auth"
+        expect(page).to have_content("Sriracha")
       end
-    end
-
-    context "without valid authentication" do
-      it "prevents a user from logging in"
-    end
-
-    context "lets a user choose a selection of jerky" do
-      #expect(page).to have_content("Please sign in using the links above")
-      it "shows the proper options for choosing jerky"
 
       it "adds a selection to the cart"
 

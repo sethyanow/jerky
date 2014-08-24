@@ -1,6 +1,6 @@
 
 $(function() {
-  Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'))
+  Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
 
   $('#payment-form').submit(function(event) {
     var $form = $(this);
@@ -34,4 +34,8 @@ $(function() {
       $form.get(0).submit();
     }
   };
+
+  $("input.cc-num").payment("formatCardNumber");
+  //$('input.cc-exp').payment('formatCardExpiry');
+  $('input.cc-cvc').payment('formatCardCVC');
 });
