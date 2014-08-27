@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
-
+    @orders = Order.where(user_id: params[:id])
+    @user = current_user
   end
 end

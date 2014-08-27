@@ -2,6 +2,20 @@
 <h3>Serving order <small><%= session[:cart_id] %></small></h3>
 <h4>Subtotal: <%= number_to_currency(@cart.subtotal) %></h4>
 
+
+<%= semantic_form_for @item do |f| %>
+  <%= f.inputs :flavor, :type, :size %>
+  <%= f.inputs :quantity, as: :number %>
+  <%= f.actions %>
+<% end %>
+
+
+
+
+
+
+
+
 <%= form_tag({controller: "items", action: "create"}, method: "post", class: "form-inline") do |f| %>
   <div class="form-group">
     <label class="sr-only" for="exampleInputEmail2">Flavor</label>
@@ -44,6 +58,7 @@
   </div>
   <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
   <button type="submit" class="btn btn-default">Add to order</button>
+  <% # f.submit "Add to order", class: "btn btn-default" %>
   <%= link_to "Checkout", checkout_path %>
 <% end %>
 
@@ -66,3 +81,4 @@
   </ul>
   </div>
 <% end %>
+

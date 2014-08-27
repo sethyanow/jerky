@@ -112,6 +112,8 @@ GEM
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
+    formtastic (2.3.0)
+      actionpack (>= 3.0)
     fuubar (2.0.0)
       rspec (~> 3.0)
       ruby-progressbar (~> 1.4)
@@ -421,6 +423,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro
+  formtastic
   fuubar
   growl
   guard-bundler
