@@ -1,7 +1,8 @@
 <h1>JERKY <small>get your jerky here</small></h1>
 <h3>Serving order <small><%= session[:cart_id] %></small></h3>
 <h4>Subtotal: <%= number_to_currency(@cart.subtotal) %></h4>
-
+<br />
+<h4 id="banner-notice">This is in development. It's a test. You can't spend money here (yet) :(</h4>
 <%= form_tag({controller: "items", action: "create"}, method: "post", class: "form-inline") do |f| %>
   <div class="form-group">
     <label class="sr-only" for="exampleInputEmail2">Flavor</label>
