@@ -15,7 +15,7 @@ class CheckoutController < ApplicationController
 
         order = Order.new()
         order.user_id = current_user.id
-        order.charge_id = charge.id
+        #order.charge_id = charge.id
         order.items << @cart.items
         order.purchased = true
         order.save
