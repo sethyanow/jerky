@@ -13,14 +13,17 @@ class CheckoutController < ApplicationController
           :description => current_user.email
         )
 
-        order = Order.new()
-        order.user_id = current_user.id
-        #order.charge_id = charge.id
-        order.items << @cart.items
-        order.purchased = true
-        order.save
+        if charge
+          order = Order.new()
+          order.user_id = current_user.id
+          order.charge_id = charge.id
+          order.items << @cart.items
+          order.purchased = true
+          order.save
 
-        current_user.cart = Cart.new
+          current_user.cart = Cart.new
+        end
+
 
         #!! TODO:
 
