@@ -29,3 +29,13 @@ form.formtastic.item {
   width: 100%;
   clear: both;
 }
+
+ul.form-group {
+  list-style: none;
+
+
+  .col-sm-2 input[type=submit] {
+    margin-top: 20px;
+
+  }
+}

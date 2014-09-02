@@ -1,71 +1,59 @@
-<h1>JERKY <small>get your jerky here</small></h1>
-<h3>Serving order <small><%= session[:cart_id] %></small></h3>
-<h4>Subtotal: <%= number_to_currency(@cart.subtotal) %></h4>
-<br />
-<h4 id="banner-notice">This is in development. It's a test. You can't spend money here (yet) :(</h4>
-<%= form_tag({controller: "items", action: "create"}, method: "post", class: "form-inline") do |f| %>
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail2">Flavor</label>
-    <div class="input-group">
-      <div class="input-group-addon">Flavor:</div>
-      <select class="form-control" name="item[flavor_id]">
-        <%= Flavor.all.each do |flavor| %>
-          <option value=<%= flavor.id %>><%= flavor.name %></option>
-        <% end %>
-      </select>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <h1>JERKY <small>get your jerky here</small></h1>
+      <h3>Serving order <small><%= session[:cart_id] %></small></h3>
+      <h4>Subtotal: <%= number_to_currency(@cart.subtotal) %></h4>
+      <br />
+      <h4 id="banner-notice" class="lead">This is in development. It's a test. You can't spend money here (yet) :(</h4>
+    </div>
+    <div class="col-sm-4">
+      <h4>About:</h4>
+      <p>Tattooed iPhone Banksy kogi locavore freegan, biodiesel seitan Bushwick. Letterpress tote bag irony kogi, locavore sartorial roof party. Lomo crucifix iPhone, gastropub PBR&B lo-fi retro ennui scenester mumblecore craft beer YOLO narwhal drinking vinegar. Sustainable flannel kale chips four loko, narwhal cray ethical farm-to-table paleo twee letterpress roof party. Thundercats pickled ethnic, tattooed actually YOLO drinking vinegar tofu put a bird on it. Synth keffiyeh pork belly ethnic, locavore whatever craft beer Marfa letterpress banjo cred PBR Carles fashion axe. 3 wolf moon tote bag American Apparel, forage gentrify brunch drinking vinegar ugh.</p>
+    </div>
+    <div class="col-sm-4">
+      <h4>Cart:</h4>
+
+      <% unless @cart.items.count == 0 then %>
+        <div class="well">
+          <ul class="list-group">
+          <% @cart.items.each do |item| %>
+            <li class="list-group-item">
+              <span class="badge"><%= number_to_currency(item.price) %></span>
+              <h5>(<%= item.quantity %>)
+                <%= item.size.name %>
+                <%= "Bag".pluralize(item.quantity) %> of
+                <%= item.flavor.name %> flavor
+                <%= item.type.name %>
+                <%= link_to "remove", item, method: :delete %>
+                </button>
+              </h5>
+            </li>
+          <% end %>
+        </ul>
+        </div>
+      <% end %>
     </div>
   </div>
-  <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail2">Type</label>
-    <div class="input-group">
-      <div class="input-group-addon">Type:</div>
-      <select class="form-control" name="item[type_id]">
-        <%= Type.all.each do |type| %>
-          <option value=<%= type.id %>><%= type.name %></option>
-        <% end %>
-      </select>
-    </div>
+
+
+  <%= simple_form_for @item do |f| %>
+  <div class="row form-group jumbotron">
+    <%= f.input :flavor, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, as: :select, collection: Flavor.all %>
+    <%= f.input :type, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, collection: Type.all %>
+    <%= f.input :size, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, collection: Size.all %>
+    <%= f.input :quantity, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"} %>
+    <%= f.submit label: 'Add to Cart', wrapper_html: {class: "col-sm-2"}, input_html: {class: "form-control"} %>
+    <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
   </div>
-    <div class="form-group">
-    <label class="sr-only" for="exampleInputEmail2">Size</label>
-    <div class="input-group">
-      <div class="input-group-addon">Size:</div>
-      <select class="form-control" name="item[size_id]">
-        <%= Size.all.each do |size| %>
-          <option value=<%= size.id %>><%= size.name %></option>
-        <% end %>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="input-group">
-      <div class="input-group-addon">Quantity:</div>
-      <input class="form-control" type="text" name="item[quantity]" placeholder="Enter quantity" value="1">
-    </div>
-  </div>
-  <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
-  <button type="submit" class="btn btn-default">Add to order</button>
-  <% # f.submit "Add to order", class: "btn btn-default" %>
-  <%= link_to "Checkout", checkout_path %>
+<!--     <li class="col-md-2">
+      <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
+      <button type="submit" class="btn btn-default">Add to order</button>
+      <% # f.submit "Add to order", class: "btn btn-default" %>
+      <%= link_to "Checkout", checkout_path %>
+    </li>
+  </ul>
+ --></div>
 <% end %>
 
-<% unless @cart.items.count == 0 then %>
-  <div class="well">
-    <ul class="list-group">
-    <% @cart.items.each do |item| %>
-      <li class="list-group-item">
-        <span class="badge"><%= number_to_currency(item.price) %></span>
-        <h4>(<%= item.quantity %>)
-          <%= item.size.name %>
-          <%= "Bag".pluralize(item.quantity) %> of
-          <%= item.flavor.name %> flavor
-          <%= item.type.name %>
-          <%= link_to "remove", item, method: :delete %>
-          </button>
-        </h4>
-      </li>
-    <% end %>
-  </ul>
-  </div>
-<% end %>
 
