@@ -39,9 +39,9 @@
 
   <%= simple_form_for @item do |f| %>
   <div class="row form-group jumbotron">
-    <%= f.input :flavor, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, as: :select, collection: Flavor.all %>
-    <%= f.input :type, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, collection: Type.all %>
-    <%= f.input :size, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, collection: Size.all %>
+    <%= f.input :flavor_id, as: :select, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, collection: Flavor.all %>
+    <%= f.input :type_id, as: :select, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, collection: Type.all %>
+    <%= f.input :size_id, as: :select, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, collection: Size.all %>
     <%= f.input :quantity, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"} %>
     <%= f.submit label: 'Add to Cart', wrapper_html: {class: "col-sm-2"}, input_html: {class: "form-control"} %>
     <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
