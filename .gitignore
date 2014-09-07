@@ -15,7 +15,7 @@
 /libpeerconnection.log
 npm-debug.log
 testem.log
-config/secrets.yml
+
 #----------------------------------------------------------------------------
 # Ignore these files when commiting to a git repository.
 #
@@ -98,3 +98,4 @@ pickle-email-*.html
 
 # Ignore application configuration
 /config/application.yml
+/config/secrets.yml
