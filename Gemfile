@@ -33,6 +33,7 @@ gem 'public_activity'
 gem 'stripe'
 gem 'stripe_event'
 gem 'rack-timeout'
+gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 group :development do
   gem 'growl', require: false
