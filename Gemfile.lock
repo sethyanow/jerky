@@ -261,6 +261,8 @@ GEM
       railties (>= 3.0.0)
     puma (2.9.1)
       rack (>= 1.1, < 2.0)
+    pundit (0.3.0)
+      activesupport (>= 3.0.0)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -463,6 +465,7 @@ DEPENDENCIES
   pry-rescue
   public_activity
   puma
+  pundit
   quiet_assets
   rack-livereload
   rack-timeout

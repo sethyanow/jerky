@@ -18,6 +18,7 @@ gem 'omniauth-google-oauth2'
 gem 'omniauth-identity'
 gem 'figaro'#, '>= 1.0.0.rc1'
 gem 'high_voltage'
+gem 'pundit'
 gem 'pg'
 gem 'wiselinks'
 gem 'activemerchant'
@@ -34,7 +35,6 @@ gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 group :development do
   gem 'growl', require: false
-  gem 'rails_admin'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
@@ -62,6 +62,7 @@ end
 group :development, :test do
   gem 'spork-rails'
   gem 'database_cleaner'
+  gem 'rails_admin'
   gem 'spring-commands-rspec'
   gem 'spring-commands-spinach'
   gem 'spring-commands-any'
