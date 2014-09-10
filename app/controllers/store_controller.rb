@@ -1,5 +1,6 @@
 class StoreController < ApplicationController
   before_action :setup
+
   def index
   end
 
@@ -11,12 +12,7 @@ class StoreController < ApplicationController
   end
 
   def build_cart
-    # Short-circuit magic
-    # => Check for a cart object
-    # => if nil, attempt to grab the user's cart
-    # => if nil (new user, just finished checkout)
-    # =>   Create a new cart
-    @cart ||= Cart.where(user_id: @user.id).first || Cart.create
+    @cart ||= current_user.cart || Cart.create
     session[:cart_id] =  @cart.id
   end
 
