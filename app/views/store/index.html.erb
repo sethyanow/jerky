@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <h1>JERKY <small>get your jerky here</small></h1>
       <h3>Serving order <small><%= session[:cart_id] %></small></h3>
       <h4>Subtotal: <%= number_to_currency(@cart.subtotal) %></h4>
@@ -8,8 +8,18 @@
       <h4 id="banner-notice" class="lead">This is in development. It's a test. You can't spend money here (yet) :(</h4>
     </div>
     <div class="col-sm-4">
-      <h4>About:</h4>
-      <p>Tattooed iPhone Banksy kogi locavore freegan, biodiesel seitan Bushwick. Letterpress tote bag irony kogi, locavore sartorial roof party. Lomo crucifix iPhone, gastropub PBR&B lo-fi retro ennui scenester mumblecore craft beer YOLO narwhal drinking vinegar. Sustainable flannel kale chips four loko, narwhal cray ethical farm-to-table paleo twee letterpress roof party. Thundercats pickled ethnic, tattooed actually YOLO drinking vinegar tofu put a bird on it. Synth keffiyeh pork belly ethnic, locavore whatever craft beer Marfa letterpress banjo cred PBR Carles fashion axe. 3 wolf moon tote bag American Apparel, forage gentrify brunch drinking vinegar ugh.</p>
+      <h4>Order:</h4>
+      <%= simple_form_for @item do |f| %>
+        <div class="form-group jumbotron">
+          <%= f.input :flavor_id, as: :select, input_html: {class: "form-control"}, collection: Flavor.all %>
+          <%= f.input :type_id, as: :select, input_html: {class: "form-control"}, collection: Type.all %>
+          <%= f.input :size_id, as: :select, input_html: {class: "form-control"}, collection: Size.all %>
+          <%= f.input :quantity, input_html: {class: "form-control"} %>
+          <%= f.submit label: 'Add to Cart', input_html: {class: "form-control"} %>
+          <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
+          <%= link_to "Checkout", checkout_path %>
+        </div>
+      <% end %>
     </div>
     <div class="col-sm-4">
       <h4>Cart:</h4>
@@ -35,25 +45,5 @@
       <% end %>
     </div>
   </div>
-
-
-  <%= simple_form_for @item do |f| %>
-  <div class="row form-group jumbotron">
-    <%= f.input :flavor_id, as: :select, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, collection: Flavor.all %>
-    <%= f.input :type_id, as: :select, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, collection: Type.all %>
-    <%= f.input :size_id, as: :select, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"}, collection: Size.all %>
-    <%= f.input :quantity, input_html: {class: "form-control"}, wrapper_html: {class: "col-sm-2"} %>
-    <%= f.submit label: 'Add to Cart', wrapper_html: {class: "col-sm-2"}, input_html: {class: "form-control"} %>
-    <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
-  </div>
-<!--     <li class="col-md-2">
-      <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
-      <button type="submit" class="btn btn-default">Add to order</button>
-      <% # f.submit "Add to order", class: "btn btn-default" %>
-      <%= link_to "Checkout", checkout_path %>
-    </li>
-  </ul>
- --></div>
-<% end %>
 
 
