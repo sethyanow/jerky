@@ -11,7 +11,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'bootstrap-sass'
 gem 'activerecord-session_store'
-gem 'pundit'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
@@ -24,10 +23,8 @@ gem 'wiselinks'
 gem 'activemerchant'
 gem 'active_shipping'
 gem 'simple_form'
-gem 'formtastic'
 gem 'bcrypt'
 gem 'seedbank'
-gem 'rails_admin'
 gem 'fuubar'
 gem 'public_activity'
 gem 'stripe'
@@ -37,6 +34,7 @@ gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 group :development do
   gem 'growl', require: false
+  gem 'rails_admin'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'

@@ -120,8 +120,6 @@ GEM
     font-awesome-rails (4.2.0.0)
       railties (>= 3.2, < 5.0)
     formatador (0.2.5)
-    formtastic (3.0.0)
-      actionpack (>= 3.2.13)
     fuubar (2.0.0)
       rspec (~> 3.0)
       ruby-progressbar (~> 1.4)
@@ -263,8 +261,6 @@ GEM
       railties (>= 3.0.0)
     puma (2.9.1)
       rack (>= 1.1, < 2.0)
-    pundit (0.3.0)
-      activesupport (>= 3.0.0)
     quiet_assets (1.0.3)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
@@ -441,7 +437,6 @@ DEPENDENCIES
   factory_girl_rails
   faker
   figaro
-  formtastic
   fuubar
   growl
   guard-bundler
@@ -468,7 +463,6 @@ DEPENDENCIES
   pry-rescue
   public_activity
   puma
-  pundit
   quiet_assets
   rack-livereload
   rack-timeout
