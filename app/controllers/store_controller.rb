@@ -11,17 +11,12 @@ class StoreController < ApplicationController
     render 'layouts/signin'
   end
 
-  def build_cart
-    @cart = current_user.cart ||= Cart.create
-    session[:cart_id] =  @cart.id
-  end
-
   def setup
     @item ||= Item.new
 
     if current_user
-      @user = current_user
-      build_cart
+      @cart = current_user.check_cart
+      session[:cart_id] =  @cart.id
     else
       display_signin
     end

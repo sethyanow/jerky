@@ -10,8 +10,17 @@ class User < ActiveRecord::Base
   validates :uid,       presence: true
   validates :provider,  presence: true
 
+  def new_cart
+    self.cart.destroy if self.cart
+    self.cart = Cart.create
+  end
+
+  def check_cart
+    self.cart || new_cart
+  end
+
   def admin?
-    true
+    false
   end
 
   def self.from_omniauth(auth)
