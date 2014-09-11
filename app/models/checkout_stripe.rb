@@ -7,23 +7,25 @@ class CheckoutStripe
   end
 
   def charge
+    create_customer
     charge_customer
   end
 
   private
 
   def create_customer
-
-
-
+    @customer = Stripe::Customer.create(
+      email: 'example@stripe.com',
+      card: @token
+    )
   end
 
   def charge_customer
     @charge = Stripe::Charge.create(
-      :amount => (Integer(100 * @cart.subtotal)), # amount in cents, again
-      :currency => "usd",
-      :card => @token,
-      :description => @user.email
+      amount: (Integer(100 * @cart.subtotal)), # amount in cents, again
+      currency: "usd",
+      customer: @customer.id,
+      description: @user.email
     )
 
     if @charge
@@ -34,8 +36,7 @@ class CheckoutStripe
       @order.purchased = true
       @order.save
 
-      @user.cart = Cart.new
-      @user.save
+      @user.new_cart
     end
   end
 end
