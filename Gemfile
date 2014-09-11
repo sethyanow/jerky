@@ -31,6 +31,7 @@ gem 'public_activity'
 gem 'stripe'
 gem 'stripe_event'
 gem 'rack-timeout'
+gem 'rails_admin'
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 
 group :development do
@@ -62,7 +63,6 @@ end
 group :development, :test do
   gem 'spork-rails'
   gem 'database_cleaner'
-  gem 'rails_admin'
   gem 'spring-commands-rspec'
   gem 'spring-commands-spinach'
   gem 'spring-commands-any'
