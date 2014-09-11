@@ -15,9 +15,11 @@
           <%= f.input :type_id, as: :select, input_html: {class: "form-control"}, collection: Type.all %>
           <%= f.input :size_id, as: :select, input_html: {class: "form-control"}, collection: Size.all %>
           <%= f.input :quantity, input_html: {class: "form-control"} %>
-          <%= f.submit label: 'Add to Cart', input_html: {class: "form-control"} %>
-          <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
-          <%= link_to "Checkout", checkout_path %>
+          <p>
+            <input type="hidden" name="item[cart_id]" value="<%= @cart.id %>" />
+            <%= f.submit  'Add to Cart', input_html: {class: "form-control"} %>
+            <input type="submit" id="checkout_button" value="Checkout" />
+          </p>
         </div>
       <% end %>
     </div>
