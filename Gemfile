@@ -35,7 +35,6 @@ gem 'rails_admin'
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 gem 'thin'
 gem 'coveralls', require: false
-gem 'docile'
 
 group :development do
   gem 'growl', require: false

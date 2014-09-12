@@ -452,7 +452,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   coveralls
   database_cleaner
-  docile
   factory_girl_rails
   faker
   figaro
