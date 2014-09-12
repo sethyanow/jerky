@@ -50,7 +50,6 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-livereload'
-  gem 'guard-spork'
   gem 'guard-pow', require: false
   gem 'rack-livereload'
   gem 'guard-spinach'
@@ -63,7 +62,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'spork-rails'
   gem 'database_cleaner'
   gem 'spring-commands-rspec'
   gem 'spring-commands-spinach'

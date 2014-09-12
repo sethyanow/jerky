@@ -81,8 +81,6 @@ GEM
       launchy
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    childprocess (0.5.3)
-      ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -155,10 +153,6 @@ GEM
     guard-spinach (0.0.3)
       guard (>= 1.1)
       spinach
-    guard-spork (1.5.1)
-      childprocess (>= 0.2.3)
-      guard (>= 1.1)
-      spork (>= 0.8.4)
     haml (4.0.5)
       tilt
     hashie (3.3.1)
@@ -382,10 +376,6 @@ GEM
       colorize
       gherkin-ruby (>= 0.3.2)
       json
-    spork (1.0.0rc4)
-    spork-rails (4.0.0)
-      rails (>= 3.0.0, < 5)
-      spork (>= 1.0rc0)
     spring (1.1.3)
     spring-commands-any (1.0.0)
       spring (>= 0.9.1)
@@ -463,7 +453,6 @@ DEPENDENCIES
   guard-rails
   guard-rspec
   guard-spinach
-  guard-spork
   heroku_secrets!
   high_voltage
   jbuilder (~> 2.0)
@@ -500,7 +489,6 @@ DEPENDENCIES
   seedbank
   shoulda-matchers
   simple_form
-  spork-rails
   spring
   spring-commands-any
   spring-commands-rspec
