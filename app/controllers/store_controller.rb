@@ -6,11 +6,6 @@ class StoreController < ApplicationController
 
   private
 
-  def display_signin
-    session[:cart_id] = nil
-    render 'layouts/signin'
-  end
-
   def setup
     @item ||= Item.new
 

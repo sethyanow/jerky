@@ -2,5 +2,10 @@
 
 FactoryGirl.define do
   factory :flavor do
+    name "Beef"
+
+    factory :bpg do
+      name "Black Pepper & Garlic"
+    end
   end
 end
