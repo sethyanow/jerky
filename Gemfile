@@ -33,6 +33,7 @@ gem 'stripe_event'
 gem 'rack-timeout'
 gem 'rails_admin'
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
+gem 'thin'
 
 group :development do
   gem 'growl', require: false
@@ -71,7 +72,6 @@ group :development, :test do
   gem 'rspec-activemodel-mocks'
   gem 'pry-rails'
   gem 'pry-rescue'
-  gem 'puma'
 end
 group :production do
   gem 'puma'
