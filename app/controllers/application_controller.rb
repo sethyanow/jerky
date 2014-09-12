@@ -17,6 +17,11 @@ class ApplicationController < ActionController::Base
   def display_signin
     session[:cart_id] = nil
     render 'layouts/signin'
+    false
+  end
+
+  def logged_in?
+    current_user || display_signin
   end
 
   private
