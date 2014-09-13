@@ -10,7 +10,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'spring', group: :development
 gem 'bootstrap-sass'
-gem 'activerecord-session_store'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
@@ -32,7 +31,6 @@ gem 'stripe'
 gem 'stripe_event'
 gem 'rack-timeout'
 gem 'rails_admin'
-gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 gem 'thin'
 gem 'coveralls', require: false
 
