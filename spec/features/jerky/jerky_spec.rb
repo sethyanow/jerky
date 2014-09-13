@@ -3,25 +3,25 @@ require 'spec_helper'
 feature "Jerky" do
   before :each do
     FactoryGirl.build(:bpg)
-    visit '/auth/developer'
+   # visit '/auth/developer'
 
-    fill_in 'Name', with: "Foobar"
-    fill_in 'Email', with: "meow@test.example"
-    click_button 'Sign In'
+    # fill_in 'Name', with: "Foobar"
+    # fill_in 'Email', with: "meow@test.example"
+    # click_button 'Sign In'
   end
   describe "a place that lets people enjoy delicous jerky", js: true do
     context "from a selection of jerky" do
       it "after the user's logged in" do
-        expect(page).to have_content("JERKY")
+        #expect(page).to have_content("JERKY")
       end
 
       it "shows the proper options for choosing jerky" do
         # => Makes sure the seed values are loaded properly
-        within(".item_flavor_id") do
+        #within(".item_flavor_id") do
           # select flavor 11
           #select("Black Pepper & Garlic", from: "item_flavor_id")
          # expect(page).to have_content("Black Pepper")
-        end
+        #end
 
         #screenshot_and_open_image
 
