@@ -1,4 +1,7 @@
 require 'rubygems'
+require 'coveralls'
+
+Coveralls.wear!
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -11,9 +14,6 @@ require 'capybara/poltergeist'
 require 'capybara/rspec'
 require 'capybara-screenshot'
 require 'capybara-screenshot/rspec'
-require 'coveralls'
-
-Coveralls.wear!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
