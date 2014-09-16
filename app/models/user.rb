@@ -35,18 +35,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def self.create_from_omniauth(auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.nickname = auth.info.nickname
-      user.name = auth.info.name
-      user.image = auth.info.image
-      user.email = auth.info.email
-      user.description = auth["description"]
-    end
-  end
-
   def self.create_guest
     create! do |user|
       user.provider = "Guest"
