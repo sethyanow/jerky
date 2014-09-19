@@ -5,4 +5,4 @@ Jerky
 [![Dependency Status](https://gemnasium.com/sethyanow/jerky.svg)](https://gemnasium.com/sethyanow/jerky)
 [![Coverage Status](https://img.shields.io/coveralls/sethyanow/jerky.svg)](https://coveralls.io/r/sethyanow/jerky?branch=master)
 
-This is a work in progress. It'll sell jerky for me, hooray!
+This is a learning project and work in progress, it's probably abandoned for the time being.
